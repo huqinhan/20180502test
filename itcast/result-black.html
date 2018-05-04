@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑名单查询结果</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/result-d.css">
+</head>
+<body>
+<div class="header">
+    <img src="images/hmlogo.jpg" alt="" class='fl'>
+    <div class="fl userName">
+        用户名：<span>李波</span>
+    </div>
+    <div class="fr">查看完整黑名单&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class='box w clearfix'>
+    <div >
+        <p class='title fl '>
+            <a class='backHome' href='./search.html'>
+                <img src="images/home.png" alt="" title="返回首页">
+            </a>
+        </p>
+         <a class='addBlack fr' href='./blackname.html'>
+             <img src="images/add.png" alt="" title="添加黑名单">
+         </a>
+        <div class="search-box clearfix ">
+            <input type="text" class='search fl'placeholder="输入关键字查询黑名单">
+            <button type="button" class="btn-sch fl">搜索一下</button>
+        </div>
+
+    </div>
+    <div class="serach-details "></div>
+    <div id="page" class="page_div fr"></div>
+</div>
+</body>
+
+<script id="test" type="text/html">
+  <% for (var i = 0; i < content.data.length; i ++) { %>
+    <div class="details clearfix" >
+           
+            <div class="content fl">
+                 <p>
+                     <span class='companyT'>公司名称:</span><span class='companyC font_color'><%=content.data[i].name%></span>
+                    <span class='companyT industry'>所属行业:</span><span class='companyC industryC'><%=content.data[i].industry%></span>
+                    <a href="blackname.html?id=<%=content.data[i].id%>" class='editBlack ' style='margin-right: 30px' data-id='<%=content.data[i].id%> '>
+                        <img class='editBlackImg ' src="images/eidt.png" alt="" title='编辑'>
+                    </a>
+                </p>
+                <p>
+                    <span class='companyT'>公司规模:</span><span class='companyC'><%=content.data[i].size%></span>
+                     <span class='companyT industry'>公司电话:</span><span class='companyC industryC'><%=content.data[i].phone%></span>
+                </p>
+               
+                <p>
+                    <span class='companyT'>公司地址:</span><span class='companyC'><%=content.data[i].address
+                     %></span>
+                </p>
+                <p><span class='companyT'>诈骗原因:</span><span class='companyC'><%=content.data[i].intro%></span></p>
+            </div>
+           
+        </div>
+     <% } %>
+</script>
+</html>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/template-native.js"></script>
+<script src="js/result-black.js"></script>
+<script src="js/paging.js"></script>
+
+
+

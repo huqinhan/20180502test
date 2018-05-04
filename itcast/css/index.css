@@ -1,0 +1,296 @@
+html{
+    overflow-y:scroll;
+}
+.l-content,.introduction{
+    width: 980px;
+    margin: auto;
+}
+.l-content,.introduction{
+    width: 980px;
+    margin: auto;
+}
+.introduction li:hover{
+    color:red;
+}
+.dis{
+    display: none;
+}
+.introduction .l-h2{
+    height: 50px;
+    background-color: lightgray;
+    line-height: 50px;
+    font-size: 20px;
+    color: #002691;
+    padding-left: 120px;
+}
+.l-ul{
+    margin: auto;
+    margin-top:10px ;
+    padding-left:120px;
+    cursor:pointer
+}
+.l-ul li{
+    float: left;
+    margin-right:10px ;
+}
+.l-span{
+    width: 2px;
+    height: 12px;
+    float: left;
+    background-color: black;
+    margin:3px 10px 0 0;
+}
+.l-mian{
+    width: 980px;
+    min-height:500px;
+    overflow: hidden;
+}
+.l-mian img{
+    width: 20%;
+    height: 200px;
+    margin: 10px 10px;
+}
+
+.box{
+    height: 10px;
+    padding-top: 40px;
+}
+.result{
+    padding-left: 120px;
+}
+.result ul{
+    padding-top: 20px;
+}
+.result-box li{
+    padding-bottom: 20px;
+}
+.result-box li h5{
+    font-size:16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #002691;
+}
+/*遮罩层*/
+.mask {
+    position: absolute; top: 0;
+    filter: alpha(opacity=60);
+    background-color: #777;
+    z-index: 1000; left: 0;
+    opacity:0.7;
+    -moz-opacity:0.7;
+}
+/*页面放大*/
+.cover {
+    width:30% !important;
+    height:100% !important;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%);
+    z-index: 1002;
+    margin: 0 !important;
+}
+
+/*面试资料开始*/
+
+/*第六个页面开始*/
+
+.l-content table{
+    width:100%;
+    color:#999;
+
+}
+.l-content td,.dcontent th{
+    width:100px;
+}
+.l-ontent td{
+
+    height:30px;
+    font-size: 16px;
+    border-bottom:1px solid #ccc;
+
+}
+.l-content th{
+
+    text-align: left;
+    font-size: 20px;
+
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;
+    height:30px;
+
+}
+.l-content .thone,.l-content .tdone{
+    width:600px;
+}
+/*.dcontent .tdtwo,.dcontent .tdtwo{
+ width:100px;
+}*/
+/*第六个页面结束*/
+/*面试资料结束*/
+/*公司简介开始*/
+.serach_details .more {
+    line-height: 24px;
+    color: #000;
+}
+.serach_details .more span {
+    color: blue;
+}
+.serach_details .table {
+    background-color: blue;
+    color: #fff;
+    width: 980px;
+}
+.serach_details .table tr {
+    line-height: 38px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.serach_details .table tr td {
+    padding-left: 15px;
+}
+.conment {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+.conment h3 {
+    line-height: 30px;
+}
+.conment ul li {
+    height: 40px;
+}
+.conment .name {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding-right: 15px;
+}
+.conment .name.new {
+    color: red;
+}
+.conment .name span {
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    color: red;
+    font-size: 12px;
+}
+.conment .cen {
+    margin: 0 10px 0 30px;
+}
+.conment .con {
+    width: 800px;
+    word-wrap: break-word;
+}
+.details {
+    margin-top: 15px;
+}
+.details h3 {
+    line-height: 30px;
+    font-size: 16px;
+    color: #000;
+}
+.details p {
+    text-indent: 2em;
+}
+
+/*公司简介结束*/
+
+/*录音*/
+.v-box div{
+    display: inline-block;
+}
+.v-box li{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+.v-box li:first-child{
+    font-size: 20px;
+}
+
+.thone{
+    width: 60%;
+}
+.tdtwo{
+    width: 18%;
+    text-align: center;
+}
+.audio-box{
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+audio{
+    position: absolute;
+    top:-20px;
+    left: 30px;
+}
+.name-box{
+    width: 30%;
+}
+/*录音结束*/
+/*材料上传开始*/
+.t_index_form{
+    width: 400px;
+    margin: auto;
+    padding: 5px;
+    background-color: #CCCCCC;
+    border-top: 2px solid #999999;
+}
+.ifmtion{
+    margin-top: 10px;
+    position: relative;
+}
+.t_index_form-input{
+    width: 170px;
+    position: absolute;
+    right: 5px;
+}
+.t_index_form-btn{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: red;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+/*材料上传结束*/
+
+.t_index_form{
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #CCCCCC;
+    border-top: 2px solid #999999;
+}
+.ifmtion{
+    margin-top: 10px;
+    position: relative;
+}
+.t_index_form-input{
+    width: 170px;
+    position: absolute;
+    right: 5px;
+}
+.t_index_form-btn{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: red;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+.btn_back{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: red;
+    margin-top: 10px;
+}

@@ -1,0 +1,80 @@
+*{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #0d1e30 ;
+            background: url("../images/Login.jpg") no-repeat ;
+            background-size: cover;
+        }
+        .header{
+            background: rgba(214,214,214,0.05);
+            height: 70px;
+        }
+        .box-logo{
+            display: block;
+            width: 175px;
+            height: 55px;
+            margin: 15px 10px;
+            background: url("../images/logo1.png") no-repeat;
+            background-size: cover;
+        }
+        nav{
+            height: 100%;
+            width: 100%;
+            position: fixed;
+        }
+        .login-wrap{
+            width: 500px;
+            height: 300px;
+            padding-top: 85px;
+            margin: 100px auto;
+            background: rgba(255,255,255,0.2);
+            position: relative;
+        }
+        .avatar{
+            position: absolute;
+            left: 50%;
+            top: -80px;
+            width: 140px;
+            height: 140px;
+            border: 10px solid transparent;
+            margin-left: -90px;
+            border-radius: 50%;
+            box-shadow: 0 1px 5px #CCC;
+            background: rgba(255,255,255,0.2);
+        }
+        .img-circle{
+            border-radius: 50%;
+            display: block;
+            width: 100%;
+        }
+        .loginForm{
+            /*border: 1px solid red;*/
+            margin-left: 50px;
+        }
+        .input-group{
+            margin: 20px 0;
+            position: relative;
+            display: table;
+            border-collapse: separate;
+
+        }
+        .form-control{
+            display: block;
+            height: 30px;
+            padding: 10px 22px;
+            font-size: 28px;
+            border-radius: 6px;
+            width: 350px;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            display: block;
+            width: 400px;
+            height: 54px;
+            border-radius: 10px;
+            font-size: 30px;
+        }

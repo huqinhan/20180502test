@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/result.css">
+    <style>
+    </style>
+</head>
+<body>
+<div id='content' style="padding-top: 10px">
+</div>
+
+<script id="test" type="text/html">
+    <% for (var i = 0; i < content.data.length; i ++) { %>
+    <div class="gsxx">
+        <!--公司名称开始-->
+        <div class='introduction'>
+            <h2 class="l-h2"><%=content.data[i].name%></h2>
+            <ul class="l-ul clearfix">
+                <li data-id=<%=content.data[i].id%>>JAVA学科 </li>
+                <span class="l-span"></span>
+                <li data-id=<%=content.data[i].id%>>web前端与移动端</li>
+                <span class="l-span"></span>
+                <li data-id=<%=content.data[i].id%>>PHP</li>
+                <span class="l-span"></span>
+                <li data-id=<%=content.data[i].id%>>UI设计学科</li>
+                <span class="l-span"></span>
+                <li data-id=<%=content.data[i].id%>>Python学科</li>
+                <span class="l-span"></span>
+                <a href="search.html"><div>返回查询页</div></a>
+            </ul>
+        </div>
+        <!-- 公司名称结束 -->
+        <!-- 公司简介开始 -->
+        <div class="l-content serach_details center">
+            <div class="details">
+                <h3>公司简介</h3>
+                <p><%=content.data[i].intro%></p>
+            </div>
+            <div class="details">
+                <h3>公司地址</h3>
+                <p><%=content.data[i].address%></p>
+            </div>
+        </div>
+        <!--公司简介结束-->
+    </div>
+    <% } %>
+</script>
+</body>
+</html>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/template-native.js"></script>
+<script src="js/result.js"></script>

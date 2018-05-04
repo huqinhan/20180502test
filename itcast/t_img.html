@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司图片上传</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div class="header">
+    <img src="images/hmlogo.jpg" alt="" class='fl'>
+    <div class="fl userName">
+        用户名：<span>李波</span>
+    </div>
+    <div class="fr">查看完整黑名单&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class='w box'>
+</div>
+<!-- 面试题上传开始 -->
+<div class="l-box">
+    <div class="l-mian">
+        <form class="t_index_form" id="tf" action="#" method="post" enctype="multipart/form-data">
+            <div class="ifmtion">
+                <span class="t_index_form-span">公司图片</span>
+                <input  type="file" name="files" multiple="multiple" accept="image/*" id="picture" class="t_index_form-input picture" />
+            </div>
+            <input type="button" class="t_index_form-btn btn_pic" value="上 传" />
+            <input type="button" class=" btn_back goBack" value="返  回" />
+        </form>
+    </div>
+</div>
+<!--模态框-->
+<div class="modal">
+    <p class="modal_p1" >恭喜你</p>
+    <p class="modal_p2">上传成功</p>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/template-native.js"></script>
+<script src="js/t_img.js"></script>
+</body>
+</html>

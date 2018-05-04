@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body {
+            background-color: #999;
+            font-family: "Microsoft YaHei UI";
+            padding-top: 10px;
+        }
+
+        .w {
+            background-color: #fff;
+            padding: 10px 10px;
+            position: relative;
+        }
+
+        .logo-box {
+            width: 100%;
+            height: 150px;
+        }
+
+        .logo-box .logo img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .logo-des {
+            padding: 0 45px;
+            text-indent: 2em;
+            text-align: center;
+            width: 770px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        h4 {
+            font-weight: 900;
+            color: #000;
+            font-size: 18px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            padding-right: 40px;
+        }
+
+        h4 img {
+            width: 30px;
+            height: 30px;
+        }
+
+        h4 button {
+            text-align: center;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .bd {
+            border-bottom: 1px solid #999;
+        }
+
+        .img-box li, .btn-box li,
+        .sub-box li {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin-left: 5px;
+            margin-bottom: 10px;
+        }
+
+        .img-box li img,
+        .sub-box li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-box li {
+            height: 40px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #000;
+
+        }
+
+        .mon-box {
+            border-bottom: 1px solid #999;
+        }
+
+        .sub-box {
+            padding-top: 10px;
+            border-bottom: 1px solid #999;
+        }
+
+        .music-box {
+            border-bottom: 1px solid #999;
+        }
+
+        .music-box li {
+            height: 50px;
+            width: 100%;
+            padding-right: 20px;
+        }
+
+        .music-title {
+            width: 100px;
+
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .music {
+            padding-top: 5px;
+        }
+
+        .comment {
+            width: 800px;
+            line-height: 20px;
+            text-indent: 2em;
+        }
+
+        .comment-title {
+            width: 150px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .comment-box li {
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        .comment-box li div {
+            display: inline-block;
+        }
+
+        .slide-music,
+        .slide-sub,
+        .slide-comment {
+            width: 30px;
+            height: 30px;
+        }
+
+        .bg-down {
+            background: url(images/down.png) no-repeat center;
+            background-size: 30px 30px;
+        }
+
+        .bg-up {
+            background: url(images/up.png) no-repeat center;
+            background-size: 30px 30px;
+        }
+
+        .active {
+            background-color: #337ab7;
+            color: #fff !important;
+        }
+
+        /*
+          * 分页样式
+          */
+
+        .page_div {
+            height: 50px;
+            font-size: 15px;
+            font-family: "microsoft yahei";
+            color: #666666;
+            padding-right: 10px;
+            box-sizing: border-box;
+            text-align: right;
+        }
+
+        /*
+         * 页数按钮样式
+         */
+
+        .page_div a {
+            min-width: 30px;
+            height: 28px;
+            border: 1px solid #dce0e0 !important;
+            text-align: center;
+            margin: 0 4px;
+            cursor: pointer;
+            line-height: 28px;
+            color: #666666;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        #firstPage,
+        #lastPage {
+            width: 50px;
+            color: #0073A9;
+            border: 1px solid #0073A9 !important;
+        }
+
+        #prePage,
+        #nextPage {
+            width: 70px;
+            color: #0073A9;
+            border: 1px solid #0073A9 !important;
+        }
+
+        .page_div .current {
+            background-color: #0073A9;
+            border-color: #0073A9;
+            color: #FFFFFF;
+        }
+
+        .totalPages {
+            margin: 0 10px;
+        }
+
+        .totalPages span,
+        .totalSize span {
+            color: #0073A9;
+            margin: 0 5px;
+        }
+        .goBack{
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="w">
+    <button class='goBack'>返&nbsp&nbsp&nbsp&nbsp回</button>
+    <!--第一部分-公司logo-->
+    <div class='logo-box'>
+        <div class='fl logo'>
+            <!--<img src="" alt="找不到图片">-->
+        </div>
+        <div class='fl  logo-des'>
+        </div>
+    </div>
+    <!--第二部分-公司环境-->
+    <h4>公司环境</h4>
+    <ul class="img-box">
+        <li><a href="pic.html"><img alt="找不到图片"></a></li>
+    </ul>
+    <!--第三部分-岗位方向-->
+    <h4>岗位方向</h4>
+    <ul class="btn-box">
+        <li data-id="0" class="active">java</li>
+        <li data-id="1">前端</li>
+        <li data-id="2">php</li>
+        <li data-id="3">设计</li>
+        <li data-id="4">python</li>
+    </ul>
+    <!--第三部分-薪资待遇-->
+    <!--<h4 class="mon-box">薪资待遇 <span>20k</span></h4>-->
+    <!--第四部分-面试题-->
+    <h4>
+        <span class="fl">面试题</span>&nbsp;&nbsp;
+        <button><a href="">上传</a></button>
+         <span class="fr slide-sub   bg-up bg-down">
+        </span>
+    </h4>
+    <ul class="sub-box" id='sub-box'>
+        <!--<li><img src="images/s1.png" alt="找不到图片"></li>-->
+    </ul>
+    <!--第5部分-录音-->
+    <h4>
+        <span class="fl">面试录音</span>&nbsp;&nbsp;
+        <button><a href="">上传</a></button>
+        <span class="fr slide-music    bg-up bg-down">
+        </span>
+    </h4>
+    <ul class="music-box" id='music-box'>
+        <!--<li>-->
+        <!--<div class="fl music-title">-->
+        <!--<p>录音1</p>-->
+        <!--<p>2:30</p>-->
+        <!--</div>-->
+        <!--<div class="fl music">-->
+        <!--<audio controls="controls">-->
+        <!--<source src="music/2.mp3" type="audio/ogg">-->
+        <!--</audio>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+    <!--第6部分-学员评价-->
+    <!--<h4>-->
+        <!--<span class="fl">学员评价</span>&nbsp;&nbsp;-->
+        <!--<button><a href="">上传</a></button>-->
+        <!--<span class="fr slide-comment   bg-up bg-down">-->
+        <!--</span>-->
+    <!--</h4>-->
+    <!--<ul class="comment-box" id="comment-box">-->
+
+    <!--</ul>-->
+    <!--&lt;!&ndash;分页&ndash;&gt;-->
+    <!--<div id="page" class="page_div"></div>-->
+</div>
+
+<!--huqinhan  面试题-->
+<script type="text/html" id='pictmp'>
+    <% for(var i = 0; i < list.length; i++)  { %>
+    <li><a href=""><img src="<%=list[i]%>" alt="找不到图片"></a></li>
+    <% } %>
+</script>
+
+<!--huqinhan  录音-->
+<script type="text/html" id='audiotmp'>
+    <% for(var i = 0; i < list.length; i++)  { %>
+    <li>
+        <div class="fl music-title">
+            <p>录音<%=i+1%></p>
+            <!--<p>2:30</p>-->
+        </div>
+        <div class="fl music">
+            <audio controls="controls">
+                <source src="<%=list[i]%>" type="audio/ogg">
+            </audio>
+        </div>
+    </li>
+    <% } %>
+</script>
+
+<!--huqinhan  学员评价-->
+<script type="text/html" id='commenttmp'>
+    <li class="bg">
+        <div class="comment-title">
+            <p>前端学科15期张XXX</p>
+            <p>2018/01/01</p>
+        </div>
+        <div class="comment">
+            很好很好很好很好很好很好很好很
+        </div>
+    </li>
+
+</script>
+
+<script src='js/jquery-3.1.0.min.js'></script>
+<script src="js/template-native.js"></script>
+<script src='js/paging.js'></script>
+
+
+<script>
+    $(function () {
+
+        $('.goBack').click(function () {
+            console.log(2);
+            window.history.go(-1)
+        })
+
+        //分页
+        $("#page").paging({
+            pageNo: 1,
+            totalPage: 1,
+            totalSize: 1,
+            callback: function (num) {
+            }
+        })
+
+        $('.slide-music').click(function () {
+            $('.music-box').slideToggle();
+            $('.slide-music').toggleClass("bg-up")
+        })
+
+        $('.slide-comment').click(function () {
+            $('.comment-box').slideToggle();
+            $('.slide-comment').toggleClass("bg-up")
+        })
+
+        $('.slide-sub').click(function () {
+            $('.sub-box').slideToggle();
+            $('.slide-sub').toggleClass("bg-up")
+        })
+
+        $('#comment-box').html("学员评价模块有待完善");
+
+
+        //请求数据
+        var urlr = window.location.search;
+        var roleId = window.location.search.split("&")[1].split("=")[1];
+        var id = window.location.search.split("&")[0].split("=")[1];
+//        var name=document.cookie.split(";")[0].split("=")[1];
+        console.log("roleId===" + roleId+"id===" + id);
+
+//        $('h4 button a').attr('href','t_index.html?id='+id)
+
+        //roleId == 1的情况下可以显示上传按钮
+        if (roleId == 1) {
+            $("h4 button").show()
+        } else {
+            $("h4 button").hide()
+        }
+
+    //获取公司基本信息
+        if (id != "") {
+            $.ajax({
+                type: "get",
+                url:'http://172.16.0.97/zeus/corp/info/'+id,
+//                url:'http://jiuye.itcast.cn/zeus/corp/like?name='+name,
+                dataType: "json",
+                success: function (res) {
+                    var data = res.data
+                    console.log(res.data.picture);
+                    if (res.code == 0) {
+                        $('.logo-box .logo-des').text(data.intro);
+                        if(data.picture!=null&&data.picture!='string'){
+                            $('.img-box img').attr("src", 'http://172.16.0.97:8088/' + data.picture)
+//                            $('.logo-box img').attr("src", 'http://jiuye.itcast.cn/static/' + data.picture)
+
+                        }else {
+                            $('.img-box').html('没有该公司相关图片')
+//                            $('.logo-box .logo').html('公司logo模板有待完善')
+                        }
+
+                    } else {
+                    }
+                },
+                error: function (msg) {
+                }
+            });
+        } else {
+        }
+
+        //给不同学科注册点击事件，获取该学科的详细信息
+        $('.btn-box li').click(function () {
+            $(this).addClass('active').siblings('li').removeClass('active')
+            var type = $(this).attr("data-id")
+            getindex(type);
+            $('h4 button a').attr('href','t_index.html?id='+id+'&type='+type)
+        })
+
+        //起始执行一次Java学科的
+        getindex(0)
+        $('h4 button a').attr('href','t_index.html?id='+id+'&type=0')
+
+        //注册请求详细数据的事件
+        function getindex(type){
+            $.ajax({
+                type: "get",
+                url: "http://172.16.0.97/zeus/interview/find/" + id + "/" + type,
+                dataType: "json",
+                success: function (res) {
+                    console.log(res);
+                    if (res.code == "0") {
+//                        http://jiuye.itcast.cn:8088/23/1517386711279-tpy01.jpg
+
+                        if(res.data.imgs!=null){
+                            console.log(res.data.imgs);
+                            //面试题
+                            var arrpic = res.data.imgs.split(";")
+                            arrpic.forEach(function (item, index) {
+                                arrpic[index] = ' http://172.16.0.97:8088/' + item
+                            })
+                            var datapic = {};
+                            datapic.list = arrpic
+//                        datapic.list=[
+//                            "./images/b1.jpg",
+//                            "./images/b1.jpg"
+//                        ]
+                            var html = template("pictmp", datapic);
+                            $('#sub-box').html(html);
+                            $('#sub-box li a').attr('href','pic.html?id='+id+'&type='+type)
+                        }else {
+                            $('#sub-box').html("该学科面试题没有收集");
+                        }
+
+                        if(res.data.record!=null){
+                            console.log(res.data.record);
+                            //录音
+                        var arraudio = res.data.record.split(";");
+                        arraudio.forEach(function (item, index) {
+                            arraudio[index] = ' http://172.16.0.97:8088/' + item
+                        })
+                        var dataaudio = {};
+                        dataaudio.list = arraudio
+                        var html = template("audiotmp", dataaudio);
+                        $('#music-box').html(html);
+//
+                        }else {
+                            $('#music-box').html("该学科面试录音没有收集");
+                        }
+
+
+
+
+//
+//                        //评价-分页
+//                        var datacomment = {};
+//                        datacomment.list = datacomment
+//                        var html = template("commenttmp", datacomment);
+//                        $('#comment-box').html(html);
+//                        //分页
+//                        $("#page").paging({
+//                            pageNo: 1,//显示第几页
+//                            totalPage: data.totalPage,//多少页
+//                            totalSize: data.totalSize,//多少条数据
+//                            callback: function (num) {
+////                                ajaxTest(num)
+//                            }
+//                        })
+
+                    } else {
+                        $('#music-box').html(res.message);
+                        $('#sub-box').html(res.message);
+//                        $('#comment-box').html("当前没有学员评价");
+                    }
+                },
+                error: function (msg) {
+                }
+            });
+        }
+
+    })
+
+
+    //
+    //     模拟ajax数据用以下方法，方便用户更好的掌握用法
+    //    参数为当前页
+    //    ajaxTest(1);
+    //
+    //    function ajaxTest(num) {
+    //        $.ajax({
+    //            url: "table.json",
+    //            type: "get",
+    //            data: {},
+    //            dataType: "json",
+    //            success: function (data) {
+    //                console.log(data);
+    //                //分页
+    //                $("#page").paging({
+    //                    pageNo: num,
+    //                    totalPage: data.totalPage,
+    //                    totalSize: data.totalSize,
+    //                    callback: function (num) {
+    //                        ajaxTest(num)
+    //                    }
+    //                })
+    //            }
+    //        })
+    //    }
+
+
+</script>
+</body>
+</html>

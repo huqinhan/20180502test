@@ -1,0 +1,227 @@
+body {
+    background-color: #999;
+    font-family: "Microsoft YaHei UI";
+    padding-top: 10px;
+}
+
+.w {
+    background-color: #fff;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.logo-box {
+    width: 100%;
+    min-height: 130px;
+}
+
+.logo-box .logo img {
+    width: 150px;
+    height: 150px;
+}
+
+.logo-des {
+    padding: 0 60px;
+    text-indent: 2em;
+    /*text-align: center;*/
+    width: 840px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+h4 {
+    font-weight: 900;
+    color: #000;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+h4 img {
+    width: 30px;
+    height: 30px;
+}
+
+h4 button {
+    text-align: center;
+    cursor: pointer;
+    color: #000;
+}
+
+.bd {
+    border-bottom: 1px solid #999;
+}
+
+.img-box li, .btn-box li,
+.sub-box li {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.img-box li img,
+.sub-box li img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-box li {
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #000;
+
+}
+
+.mon-box {
+    border-bottom: 1px solid #999;
+}
+
+.sub-box {
+    padding-top: 10px;
+    border-bottom: 1px solid #999;
+}
+
+.music-box {
+    border-bottom: 1px solid #999;
+}
+
+.music-box li {
+    height: 50px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.music-title {
+    width: 100px;
+
+    line-height: 20px;
+    text-align: center;
+}
+
+.music {
+    padding-top: 5px;
+}
+
+.comment {
+    width: 800px;
+    line-height: 20px;
+    text-indent: 2em;
+}
+
+.comment-title {
+    width: 150px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.comment-box li {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.comment-box li div {
+    display: inline-block;
+}
+
+.slide-music,
+.slide-sub,
+.slide-comment {
+    width: 30px;
+    height: 30px;
+}
+
+.bg-down {
+    background: url(../images/down.png) no-repeat center;
+    background-size: 30px 30px;
+}
+
+.bg-up {
+    background: url(../images/up.png) no-repeat center;
+    background-size: 30px 30px;
+}
+
+.active {
+    background-color: #337ab7;
+    color: #fff !important;
+}
+
+/*
+  * 分页样式
+  */
+
+.page_div {
+    height: 50px;
+    font-size: 15px;
+    font-family: "microsoft yahei";
+    color: #666666;
+    padding-right: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+/*
+ * 页数按钮样式
+ */
+
+.page_div a {
+    min-width: 30px;
+    height: 28px;
+    border: 1px solid #dce0e0 !important;
+    text-align: center;
+    margin: 0 4px;
+    cursor: pointer;
+    line-height: 28px;
+    color: #666666;
+    font-size: 13px;
+    display: inline-block;
+}
+
+#firstPage,
+#lastPage {
+    width: 50px;
+    color: #0073A9;
+    border: 1px solid #0073A9 !important;
+}
+
+#prePage,
+#nextPage {
+    width: 70px;
+    color: #0073A9;
+    border: 1px solid #0073A9 !important;
+}
+
+.page_div .current {
+    background-color: #0073A9;
+    border-color: #0073A9;
+    color: #FFFFFF;
+}
+
+.totalPages {
+    margin: 0 10px;
+}
+
+.totalPages span,
+.totalSize span {
+    color: #0073A9;
+    margin: 0 5px;
+}
+.goBack{
+    position: absolute;
+    right: 0px;
+    top:0px;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+}
+p {
+    margin-left: 54px;
+    font-size: 14px;
+}

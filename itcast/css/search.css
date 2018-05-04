@@ -1,0 +1,49 @@
+.box{
+    height: 200px;
+    padding-top: 220px;
+}
+p{
+    text-align: center;
+}
+.title{
+    color: #002691;
+    font-family: "Microsoft YaHei UI";
+    font-size: 40px;
+    font-weight:900;
+}
+.title-s{
+    font-size:14px;
+    padding-top: 10px;
+}
+.search{
+    width: 500px;
+    border-color: #002691;
+    height: 30px;
+    padding-left:10px;
+    margin-right: 2px; ;
+}
+.btn-sch{
+    background-color: #002691;
+    width: 120px;
+    height: 34px;
+    border-color: #002691;
+    display: block;
+    line-height: 34px;
+    color: #ffffff;
+}
+
+.search-box{
+    height: 40px;
+    text-align: center;
+    padding-left: 170px;
+}
+
+
+.print{
+    color: red;
+    text-decoration: underline;
+}
+.print:link,.print:hover
+{
+    color: red;
+}

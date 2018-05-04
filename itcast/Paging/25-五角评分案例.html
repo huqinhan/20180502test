@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .comment {
+            font-size: 40px;
+            color: teal;
+        }
+
+        .comment li {
+            float: left;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            var wjx_s = "★";
+            var wjx_k = "☆";
+
+            //1. 获取li注册事件,注册mouseenter事件
+            $("li").mouseenter(function () {
+                //2. 让当前元素变实心，前面的兄弟元素变实心，后面的兄弟变空心
+
+                //个人推荐；不要这样玩
+                // no zuo no die
+                $(this).text(wjx_s).prevAll().text(wjx_s);
+                $(this).nextAll().text(wjx_k);
+                //$(this).nextAll().text(wjx_k);
+            });
+
+
+            //3. 给ul注册离开事件
+            $("ul").mouseleave(function () {
+                $("li").text(wjx_k);
+
+                //5. 找到添加了active这个类的li
+                $("li.active").text(wjx_s).prevAll().text(wjx_s);
+            });
+
+            //4 给所有的li注册点击事件
+            $("li").click(function () {
+                //给点击的这个li加一个标记,排他
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+        });
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+<ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+</body>
+
+</html>

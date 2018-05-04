@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>材料上传</title>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div class='w box'>
+</div>
+<!-- 面试题上传开始 -->
+<div class="l-content">
+    <div class="">
+        <form class="t_index_form" id="tf" action="#" method="post" enctype="multipart/form-data">
+            <div class="ifmtion">
+                <span class="t_index_form-span">面试题目</span>
+                <input  type="file" name="files" multiple="multiple" accept="image/*" id="picture" class="t_index_form-input picture" />
+            </div>
+            <input type="button" class="t_index_form-btn btn_pic" value="上 传" />
+            <input type="button" class=" btn_back goBack" value="返  回" />
+        </form>
+    </div>
+</div>
+<!-- 面试题上传结束 -->
+<!-- 面试录音上传开始 -->
+<div class="l-content">
+    <div class="l-mian">
+        <form class="t_index_form" id="sf" action="#" method="post" enctype="multipart/form-data">
+            <div class="ifmtion">
+                <span class="t_index_form-span">面试录音</span>
+                <input  type="file" name="files" multiple="multiple" accept="audio/*" id="sound" class="t_index_form-input picture" />
+            </div>
+            <input type="button" class="t_index_form-btn btn_sud" value="上 传" />
+            <input type="button" class=" btn_back goBack" value="返  回" />
+        </form>
+    </div>
+</div>
+<!-- 面试录音上传结束 -->
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/template-native.js"></script>
+<script>
+    $(function () {
+        var id=window.location.search.split("&")[0].split("=")[1];
+        var type=window.location.search.split("&")[1].split("=")[1];
+        console.log("id===" + id + "type====" + type);
+        $('.goBack').click(function () {
+            window.history.go(-1)
+            window.localStorage.setItem('type',type)
+        });
+        //上传图片
+        $('.btn_pic').on("click",function(){
+            var data = new FormData();
+            data.append('files', $('#picture')[0].files[0]);
+            data.append('corpId',id);
+            $.ajax({
+                        type: "post",
+                        url: "http://172.16.0.97/zeus/upload/file?",
+                        processData: false,
+                        contentType: false,
+                        data: data,
+                        success: function(msg){
+                            testp(msg)
+                        }
+                    }
+            );
+        })
+        var testp=function(msg){
+            var url=msg.data.urls[0];
+            $.ajax({
+                type: "get",
+                url: "http://172.16.0.97/zeus/interview/find/"+id+"/"+type,
+                dataType: "json",
+                success: function(omsg){
+                    upoad(omsg);
+                },
+                error: function (msg){
+                    console.log(msg);
+                }
+            });
+            var upoad=function(omsg){
+                console.log(omsg);
+                if(omsg.code=="0"){
+                    var oldimg= omsg.data.imgs;
+                    var tp=omsg.data.id
+                    var IMGS="";
+                    IMGS=IMGS+oldimg;
+                    IMGS=IMGS+";";
+                    IMGS=IMGS+url;
+                    var NIMGS=IMGS;
+                    console.log(NIMGS);
+                    var obj={
+                        "corpid": id,
+                        "imgs":NIMGS,
+                        "type": type,
+                        "id":tp
+                    };
+                    var otc=JSON.stringify(obj);
+                    $.ajax({
+                                type: "post",
+                                url: "http://172.16.0.97/zeus/interview/create ",
+                                dataType: "json",
+                                contentType:'application/json',
+                                data: otc,
+                                success: function(mosg){
+                                    console.log(mosg);
+                                    alert("上传成功！");
+                                }
+                            }
+                    );
+                }else if(omsg.code=="-1"){
+                    var obj={
+                        "corpid":id,
+                        "imgs":url,
+                        "type":type
+                    };
+                    console.log(obj);
+                    var otc=JSON.stringify(obj);
+                    $.ajax({
+                                type: "post",
+                                url: "http://172.16.0.97/zeus/interview/create",
+                                dataType: "json",
+                                contentType:'application/json',
+                                data: otc,
+                                success: function(mosg){
+                                    console.log(mosg);
+                                    alert("上传成功！");
+                                },
+                                error: function (mosg){
+                                    console.log(mosg);
+                                }
+                            }
+                    );
+                }else{
+                    console.log(omsg);
+                }
+            }
+        }
+
+//图片上传结束
+
+//录音上传开始
+//
+        $('.btn_sud').on("click",function(){
+            sound();
+        })
+        var sound=function(){
+            console.log($('#sound')[0].files[0]);
+            var data = new FormData();
+            data.append('files', $('#sound')[0].files[0]);
+            data.append('corpId',id);
+            console.log(data);
+            $.ajax({
+                        type: "post",
+                        url: "http://172.16.0.97/zeus/upload/file?",
+                        processData: false,
+                        contentType: false,
+                        data: data,
+                        success: function(msg){
+                            console.log(msg);
+
+                            tests(msg);
+                        }
+                    }
+            );
+        }
+        var tests=function(msg){
+            var urls=msg.data.urls[0];
+            console.log(urls);
+            $.ajax({
+                type: "get",
+                url: "http://172.16.0.97/zeus/interview/find/"+id+"/"+type,
+                dataType: "json",
+                success: function(omsg){
+                    upoads(omsg);
+                },
+                error: function (msg){
+                    console.log(msg);
+                }
+            });
+
+            var upoads=function(omsg){
+                if(omsg.code=="-1"){
+                    var objs={
+                        "corpid":id,
+                        "record":urls,
+                        "type":type
+                    };
+                    var otcs=JSON.stringify(objs);
+                    $.ajax({
+                                type: "post",
+                                url: "http://172.16.0.97/zeus/interview/create ",
+                                dataType: "json",
+                                contentType:'application/json',
+                                data: otcs,
+                                success: function(mosg){
+                                    alert("上传成功！");
+                                },
+                                error: function (mosg){
+                                    console.log(mosg);
+                                }
+                            }
+                    );
+                }else if(omsg.data.imgs&&omsg.data.record==null){
+                    var ts=omsg.data.id;
+                    var objs={
+                        "corpid":id,
+                        "record":urls,
+                        "type":type,
+                        "id":ts
+                    };
+                    var otcs=JSON.stringify(objs);
+                    console.log(otcs);
+                    $.ajax({
+                                type: "post",
+                                url: "http://172.16.0.97/zeus/interview/create ",
+                                dataType: "json",
+                                contentType:'application/json',
+                                data: otcs,
+                                success: function(mosg){
+                                    alert("上传成功！");
+                                },
+                                error: function (mosg){
+                                    console.log(mosg);
+                                }
+                            }
+                    );
+
+                }else if(omsg.data.record!=""){
+                    var oldsond= omsg.data.record;
+                    var ts=omsg.data.id;
+                    var SONDS="";
+                    SONDS=SONDS+oldsond;
+                    SONDS=SONDS+";";
+                    SONDS=SONDS+urls;
+                    var NSONDS=SONDS;
+                    var obj={
+                        "corpid": id,
+                        "record":NSONDS,
+                        "type": type,
+                        "id":ts
+                    };
+                    var otcs=JSON.stringify(obj);
+                    $.ajax({
+                                type: "post",
+                                url: "http://172.16.0.97/zeus/interview/create ",
+                                dataType: "json",
+                                contentType:'application/json',
+                                data: otcs,
+                                success: function(mosg){
+                                    alert("上传成功！");
+                                    console.log(mosg);
+                                }
+                            }
+                    );
+
+                }else{
+                    console.log(omsg)
+                }
+            }
+        }
+//录音上传结束
+    })
+</script>
+</body>
+</html>

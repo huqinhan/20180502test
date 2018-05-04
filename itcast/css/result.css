@@ -1,0 +1,96 @@
+html{
+	overflow-y:scroll;
+}
+.l-content,.introduction{
+	width: 980px;
+	margin: auto;
+}
+.introduction li:hover{
+	color:red;
+}
+.introduction .l-h2{
+	height: 50px;
+	background-color: lightgray;
+	line-height: 50px;
+	font-size: 20px;
+	color: #002691;
+	padding-left: 120px;
+}
+.l-ul{
+	margin: auto;
+	margin-top:10px ;
+	padding-left:120px;
+	cursor:pointer
+}
+.l-ul li{
+	float: left;
+	margin-right:10px ;
+}
+.l-span{
+	width: 2px;
+	height: 12px;
+	float: left;
+	background-color: black;
+	margin:3px 10px 0 0;
+}
+.l-mian img{
+	width: 31%;
+	margin: 10px 10px;
+}
+
+.box{
+	height: 40px;
+	padding-top: 40px;
+}
+.result{
+	padding-left: 120px;
+}
+.result ul{
+	padding-top: 20px;
+}
+
+.serach_details  .more span{
+	color: blue;
+}
+
+.serach_details .table tr {
+	line-height: 38px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+.serach_details .table tr td {
+	padding-left: 15px;
+}
+.conment h3 {
+	line-height: 30px;
+}
+.conment ul li {
+	height: 40px;
+}
+.conment .name span {
+	position: absolute;
+	top: -5px;
+	right: -20px;
+	color: red;
+	font-size: 12px;
+}
+
+.details {
+	margin-top: 10px;
+}
+.details h3 {
+	line-height: 30px;
+	color: #000;
+}
+.details p {
+	text-indent: 2em;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	-webkit-line-clamp:3;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+.gsxx{
+	margin-bottom:10px;
+}
+/*公司简介结束*/

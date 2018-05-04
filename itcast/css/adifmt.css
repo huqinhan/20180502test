@@ -1,0 +1,43 @@
+.adifmt{
+    width: 600px;
+    border: 1px solid black;
+    background-color: #E7E7E7;
+    margin: 50px auto;
+}
+.at_create{
+    padding: 10px;
+}
+.ifmtion{
+    height: 30px;
+    position: relative;
+}
+.ifmt-form{
+    margin-top: 10px;
+}
+.ifmt-form-input{
+    height: 20px;
+    width: 400px;
+    right: 10px;
+    position: absolute;
+}
+.ifmt-form-btn{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: red;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.ifmt-form-btn_sch{
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: red;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.title{
+    color: black;
+}

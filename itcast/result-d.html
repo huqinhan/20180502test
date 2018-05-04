@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/result-d.css">
+</head>
+<body>
+<div class='box w'>
+    <button class='goBack'>返&nbsp&nbsp&nbsp&nbsp回</button>
+    <div >
+        <p class='title fl '>
+            <img src="./images/logo1.png">
+        </p>
+        <div class="search-box clearfix ">
+            <input type="text" class='search fl'placeholder="输入关键字查询公司相关信息">
+            <button type="button" class="btn-sch fl">搜索一下</button>
+        </div>
+    </div>
+    <div class="serach-details ">
+    </div>
+</div>
+</body>
+<script id="test" type="text/html">
+    <div class="search-last">找到相关结果<%=content.data.length%>个</div>
+    <% for (var i = 0; i < content.data.length; i ++) { %>
+        <div class="details clearfix" data-id=<%=content.data[i].id%>>
+            <!--<img class="fl"alt="找不到图片" src=<%=content.data[i].pic%>  >-->
+            <div class="content fl"><p><%=content.data[i].intro%></p></div>
+        </div>
+    <% } %>
+</script>
+</html>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/template-native.js"></script>
+<!--<script src="js/result.js"></script>-->
+<script>
+    $(function () {
+        var urlr=decodeURI(window.location.search);
+        console.log(urlr);
+        var roleId = urlr.split("&")[1].split("=")[1];
+        var arg =  urlr.split("&")[0].split("=")[1];
+        console.log("arg="+arg);
+        console.log("roleId="+roleId);
+        getSch(arg)
+
+        //点击注册事件
+        $('.btn-sch').click(function () {
+            var msg = $('.search').val();
+            getSch(msg)
+        })
+
+        $('.goBack').click(function () {
+            console.log(2);
+            window.history.go(-1)
+        })
+        //请求数据
+        function  getSch(str){
+            if(str!=""){
+                $.ajax({
+                    type: "get",
+                    url : "http://172.16.0.97/zeus/corp/like",
+                    dataType:"json",
+                    data:{name:str},
+                    success: function(res){
+                        if(res.data&&res.data.length>1&&res.code==0) {
+                            res.data.forEach(function (val,index) {
+                                val.picture='http://172.16.0.97:8088/'+val.picture
+                            })
+                            console.log(res)
+                            msg1 = {content:res}
+                            var html = template('test',msg1);
+                            $('.serach-details').html(html);
+
+                            //点击到详情页
+                            $('.details').click(function(){
+                                id = $(this).attr("data-id")
+                                    window.location.href='./result-h.html?id='+id+'&roleId='+roleId;
+                            })
+                        }else if(res.data&&res.data.length==1) {
+                            window.location.href='./result-h.html?id='+res.data[0].id+'&roleId='+roleId;
+                        }else if(res.code==-1){
+                            var truthBeTold = window.confirm("找不到相关公司。单击'确定'重新搜索,单击'取消'退出系统!");
+                            if (truthBeTold) {
+                                window.location.href="./search.html";
+                            }else {
+                                window.location.href="http://sh.itcast.cn/";
+                            }
+                        }
+
+                    },
+                    error: function (msg){
+                    }
+                });
+            }else{
+
+                alert("请输入搜索关键字")
+            }
+        }
+    })
+
+</script>
+

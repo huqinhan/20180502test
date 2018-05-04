@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建黑名单公司</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/adifmt.css">
+    <style>
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="images/hmlogo.jpg" alt="" class='fl'>
+    <div class="fl userName">
+        用户名：<span>李波</span>
+    </div>
+    <div class="fr">查看完整黑名单&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class="ifmt-box">
+    <div class="at_create">
+        <div class="title">
+            <h3>创建黑名单公司</h3>
+        </div>
+        <form class="ifmt-form" id="ifmt-form" method="post">
+            <div class="ifmtion">
+                <span class="ifmt-form-span">公司名称:</span>
+                <input type="text" name="name" class="ifmt-form-input ifmt-form-input-name " placeholder="请输入公司名称" />
+            </div>
+            <div class="ifmtion">
+                <span class="ifmt-form-span">公司电话:</span>
+                <input type="tel" name="phone" class="ifmt-form-input ifmt-form-input-ceu" placeholder="请输入公司电话(例如：021-12345678)"/>
+            </div>
+            <div class="ifmtion dis-inline">
+                <span class="ifmt-form-span">所属行业:</span>
+                <input type="tel" name="industry" class="ifmt-form-input ifmt-form-input-ceu" placeholder="请输入所属行业" />
+            </div>
+            <div class="ifmtion dis-inline">
+                <span class="ifmt-form-span">公司规模:</span>
+                <input type="text" name="size" class="ifmt-form-input ifmt-form-input-ceu" placeholder="请输入公司规模(例如：10-50人)" />
+            </div>
+            <div class="ifmtion">
+                <span class="ifmt-form-span">公司地址:</span>
+                <input  name="address" class="ifmt-form-input ifmt-form-input-ads" placeholder="请输入公司地址"/>
+            </div>
+            <div class="ifmtion">
+                <span class="ifmt-form-span text-box">诈骗原因:</span>
+                <textarea name="intro"  rows="1" resize="none" class="ifmt-form-input ifmt-form-input-ito ifmt-text" placeholder="请输入其公司如何诈骗"></textarea>
+            </div>
+            <input type="button" class="ifmt-form-btn" value="创 建" />
+        </form>
+    </div>
+</div>
+<!--模态框-->
+<div class="modal">
+    <p class="modal_p1" >恭喜你</p>
+    <p class="modal_p2">创建公司成功</p>
+</div>
+</body>
+</html>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/blackname.js"></script>
+
+

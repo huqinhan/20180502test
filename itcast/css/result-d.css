@@ -1,0 +1,88 @@
+body {
+    background-color: #999;
+    font-family: "Microsoft YaHei UI";
+    padding-top: 10px;
+}
+.w {
+    background-color: #fff;
+    padding: 10px 10px;
+    position: relative;
+}
+.box{
+    width: 980px;
+    margin: 50px auto;
+
+}
+
+
+.title{
+    height: 34px;
+}
+.title img{
+    height: 34px;
+}
+.title-s{
+    font-size:14px;
+    padding-top: 10px;
+}
+.search{
+    width: 500px;
+    border-color: #002691;
+    height: 30px;
+    padding-left:10px;
+    margin-right: 2px; ;
+}
+.btn-sch{
+    background-color: #002691;
+    width: 120px;
+    height: 34px;
+    border-color: #002691;
+    display: block;
+    line-height: 34px;
+    color: #ffffff;
+    /*border-radius: 8px;*/
+
+}
+
+.search-box{
+    height: 40px;
+    text-align: center;
+    padding-left: 115px;
+}
+.search-last{
+    padding-left:115px;
+    color:#666;
+    margin-bottom: 20px;
+}
+
+.details img{
+    width: 95px;
+    height: 95px;
+
+
+}
+
+.details .content {
+    width: 640px;
+    height: 107px;
+    padding: 10px 0px 0 20px;
+    text-indent: 2em;
+    /*text-align: center;*/
+    cursor:pointer;
+
+
+}
+.content p{
+    padding-top:3px;
+    font-family: "微软雅黑";
+    font-size:16px;
+    color:#000;
+}
+.goBack{
+    position: absolute;
+    right: 0px;
+    top:0px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+}
